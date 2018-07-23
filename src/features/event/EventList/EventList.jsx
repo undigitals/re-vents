@@ -12,7 +12,7 @@ class EventList extends Component {
           // key is jsx to know where to start looking, event={event} we r parsing the event as eventlistItem component
           <EventListItem key={event.id} event={event}/>
         ))}
-        
+      
 
       </div>
     )
