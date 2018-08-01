@@ -2,7 +2,7 @@ import { createReducer } from '../../app/common/util/reducerUtil'
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from './testConstants.jsx'
 
 const initialState={
-    data: 45
+    data: 42
 }
 
 export const incrementCounter = (state, payload) => {
