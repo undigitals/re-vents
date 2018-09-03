@@ -24,7 +24,12 @@ export const decrementCounter = (state, payload) => {
 //     }
 // }
 
+
+// this pattern is js lookup table 
 export default createReducer(initialState, {
     [INCREMENT_COUNTER]: incrementCounter,
     [DECREMENT_COUNTER]: decrementCounter
 })
+
+
+
