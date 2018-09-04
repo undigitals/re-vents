@@ -27,3 +27,8 @@ export const configureStore=(preloadedState) => {
     }
     return store;
 }
+
+/* createStore API is taking 3 args which are rootReducer(which combines 2 reducers currently),
+ preloadedState(which is initial state), composedEnhancer(Enhancer, which is used for ehancing the store capabitilities 
+ with extra tools like middlewares, time travel, etc)
+ */

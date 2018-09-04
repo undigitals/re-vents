@@ -6,7 +6,7 @@ import EventForm from '../EventForm/EventForm'
 import cuid from 'cuid'
 import { createEvent, deleteEvent, updateEvent } from '../eventActions'
 
-// mapStateToProps is take state from the store and pass it to the component as props
+// mapStateToProps is take state from the store and pass it to the component as
 const mapState = (state) => ({
   events: state.events
 })
@@ -36,23 +36,31 @@ class EventDashboard extends Component {
   handleCreateEvent = (newEvent) => {
     newEvent.id = cuid()
     newEvent.hostPhotoURL = '/assets/user.png';
-    const updatedEvents = [
-      ...this.state.events,
-      newEvent
-    ];
+    // const updatedEvents = [
+    //   ...this.state.events,
+    //   newEvent
+    // ];
 
-    this.setState({events: updatedEvents, isOpen: false});
+    this.props.createEvent(newEvent);
+    this.setState({
+      // local state
+
+      //events: updatedEvents,
+       isOpen: false});
   };
 
   handleUpdateEvent = (updatedEvent) => {
+    this.props.updateEvent(updatedEvent)
     this.setState({
-      events: this.state.events.map(event => {
-        if (event.id === updatedEvent.id) {
-          return Object.assign({}, updatedEvent);
-        }else{
-          return event
-        }
-      }),
+      // localState
+
+      // events: this.state.events.map(event => {
+      //   if (event.id === updatedEvent.id) {
+      //     return Object.assign({}, updatedEvent);
+      //   }else{
+      //     return event
+      //   }
+      // }),
       isOpen: false,
       selectedEvent: null
     })
@@ -70,6 +78,12 @@ class EventDashboard extends Component {
 
   handleDeleteEvent = (eventId) => () => {
     this.props.deleteEvent(eventId);
+    // local state
+
+    // const updatedEvents = this.state.events.filter(e => e.id !== eventId);
+    // this.setState({
+    //   events: updatedEvents
+    // })
   }
 
   render() {
