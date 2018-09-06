@@ -6,7 +6,7 @@ import EventForm from '../EventForm/EventForm'
 import cuid from 'cuid'
 import { createEvent, deleteEvent, updateEvent } from '../eventActions'
 
-// mapStateToProps is take state from the store and pass it to the component as
+// mapStateToProps is take state from the store and pass it to the component as props
 const mapState = (state) => ({
   events: state.events
 })
